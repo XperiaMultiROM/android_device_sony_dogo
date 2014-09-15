@@ -35,6 +35,17 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1056964608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 
-#Recovery
+# Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_HARDWARE_CLASS += device/sony/dogo/cmhw
+DEVICE_RESOLUTION := 720x1280
+
+#MultiROM config. MultiROM also uses parts of TWRP config 
+MR_INPUT_TYPE := type_b 
+MR_INIT_DEVICES := device/sony/dogo/multirom/init_devices.c 
+MR_DPI := hdpi 
+MR_DPI_FONT := 216 
+MR_FSTAB := device/sony/fusion3-common/rootdir/twrp.fstab 
+MR_USE_MROM_FSTAB := true 
+MR_KEXEC_MEM_MIN := 0x85000000 
+MR_RECOVERY_IN_BOOTIMG := true
